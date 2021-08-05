@@ -6,6 +6,11 @@
             <div class="swiper-wrapper">
                 <!-- Slides -->
                 <?php if (isset($incentives) && $incentives != null) : ?>
+                    <?php
+                        $incentive_slides = $settings_incentives['incentives_number_of_slides'];
+                        $incentive_slide = 0;
+                    ?>
+
                     <?php foreach ($incentives as $key=>$incentive_per_hotel) : ?>
                         <div class="swiper-slide">
                             <div class="obpress-incentive">
@@ -19,7 +24,8 @@
                             </div>
                         </div>
                         <?php
-                            if($key == 6) {
+                            $incentive_slide++;
+                            if($incentive_slide >= $incentive_slides) {
                                 break;
                             }
                         ?>

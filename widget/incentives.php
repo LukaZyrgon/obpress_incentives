@@ -287,6 +287,22 @@ class Incentives extends \Elementor\Widget_Base {
 			]
 		);
 
+
+		$this->add_control(
+			'incentives_number_of_slides',
+			[
+				'label' => __( 'Number of Pagination Bullets', 'OBPress_SearchBarPlugin' ),
+				'type' => \Elementor\Controls_Manager::SELECT,
+				'default' => '5',
+				'options' => [
+					'2'  => __( '2', 'plugin-domain' ),
+					'3' => __( '3', 'plugin-domain' ),
+					'4' => __( '4', 'plugin-domain'),
+					'5' => __( '5', 'plugin-domain')
+				],
+			]
+		);
+
 		$this->add_control(
 			'obpress_incentives_pagination_bullet_color',
 			[
