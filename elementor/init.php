@@ -139,10 +139,6 @@ final class OBPress_Incentives_Widget {
 
         add_action('elementor/widgets/widgets_registered', [ $this, 'init_widgets']);
 
-        add_action('elementor/frontend/after_enqueue_styles', [ $this, 'widget_styles']);
-
-		add_action( 'elementor/frontend/after_register_scripts', [ $this, 'widget_scripts' ] );
-
         add_action('elementor/elements/categories_registered', [ $this, 'add_elementor_widget_categories']);
 
     }
@@ -155,17 +151,6 @@ final class OBPress_Incentives_Widget {
 		// Register widget
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Incentives() );
 		
-
-	}
-
-	public function widget_styles() {
-		wp_register_style( 'incentives_css', plugins_url( '/OBPress_Incentives/widget/assets/css/incentives.css') );        
-        wp_enqueue_style('incentives_css');
-	}
-
-	public function widget_scripts() {
-		wp_register_script( 'incentives_js',  plugins_url( '/OBPress_Incentives/widget/assets/js/incentives.js'), array('jquery'), null, true  );
-		wp_enqueue_script('incentives_js');
 
 	}
 

@@ -1,6 +1,25 @@
 <?php
 class Incentives extends \Elementor\Widget_Base {
 	
+	public function __construct($data = [], $args = null) {
+		parent::__construct($data, $args);
+		
+		wp_register_script( 'incentives_js',  plugins_url( '/OBPress_Incentives/widget/assets/js/incentives.js'), [ 'elementor-frontend' ], '1.0.0', true  );
+
+		wp_register_style( 'incentives_css', plugins_url( '/OBPress_Incentives/widget/assets/css/incentives.css') );        
+	}
+
+
+	public function get_script_depends()
+	{
+		return ['incentives_js'];
+	}
+
+	public function get_style_depends()
+	{
+		return ['incentives_css'];
+	}
+
 	public function get_name() {
 		return 'Incentives';
 	}
@@ -361,7 +380,11 @@ class Incentives extends \Elementor\Widget_Base {
 
 		$chain = get_option('chain_id');
 
-		$incentives_from_api = BeApi::getClientAvailableIncentives($chain, $language);
+		// $incentives_from_api = BeApi::getClientAvailableIncentives($chain, $language);
+        $incentives_from_api = BeApi::ApiCache('available_incentives_4_'.$chain.'_'.$language, BeApi::$cache_time['available_incentives_4'], function() use($chain, $language){
+            return BeApi::getClientAvailableIncentives($chain, $language, 4);
+        });		
+
 		$incentives_for_each_hotel= [];
 
 		if (isset($incentives_from_api->RatePlans->RatePlan)) {
