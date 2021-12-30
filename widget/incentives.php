@@ -411,15 +411,20 @@ class Incentives extends \Elementor\Widget_Base {
 		$nextIcon = "url('../icons/next.svg')";
 
 
-		if(isset($settings_incentives['obpress_incentives_pagination_bullet_back_icon']['value']['url']) && !empty($settings_incentives['obpress_incentives_pagination_bullet_back_icon']['value']['url'])) {
+		if (isset($settings_incentives['obpress_incentives_pagination_bullet_back_icon']['value']['url']) && !empty($settings_incentives['obpress_incentives_pagination_bullet_back_icon']['value']['url'])) {
 			$prevIcon = $settings_incentives['obpress_incentives_pagination_bullet_back_icon']['value']['url'];
 		}
 
-		if(isset($settings_incentives['obpress_incentives_pagination_bullet_next_icon']['value']['url']) && !empty($settings_incentives['obpress_incentives_pagination_bullet_next_icon']['value']['url'])){
+		if (isset($settings_incentives['obpress_incentives_pagination_bullet_next_icon']['value']['url']) && !empty($settings_incentives['obpress_incentives_pagination_bullet_next_icon']['value']['url'])){
 			$nextIcon = $settings_incentives['obpress_incentives_pagination_bullet_next_icon']['value']['url'];
 		}
 
-        require_once(WP_PLUGIN_DIR . '/OBPress_Incentives/widget/assets/templates/template.php');
+
+		if ( count($incentives) > 0 ) {
+			require_once(WP_PLUGIN_DIR . '/OBPress_Incentives/widget/assets/templates/template.php');
+		} 
+
+
 	}
 }
 
