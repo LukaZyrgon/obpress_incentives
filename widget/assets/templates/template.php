@@ -15,12 +15,12 @@
                         <div class="swiper-slide">
                             <div class="obpress-incentive">
                                 <?php if ($incentive_per_hotel->Discount->DiscountCode == 3) : ?>
-                                    <h4><?= $incentive_per_hotel->Discount->NightsDiscounted ?> nights</h4>
+                                    <h4><?= $incentive_per_hotel->Discount->NightsDiscounted ?> <?php _e('nights', 'OBPress_Incentives') ?></h4>
                                 <?php else : ?>
-                                    <h4><?= DiscountCulture($incentive_per_hotel->Discount->Percent, $language) ?>% discount</h3>
+                                    <h4><?= DiscountCulture($incentive_per_hotel->Discount->Percent, $language) ?>% <?php _e('discount', 'OBPress_Incentives') ?></h3>
                                 <?php endif; ?>
                                     <p><?= $incentive_per_hotel->CompatibleOffer[0]->OfferRPH[0] ?></p>
-                                    <button>See more</button>
+                                    <button><?php _e('See more', 'OBPress_Incentives') ?></button>
                             </div>
                         </div>
                         <?php
@@ -42,6 +42,6 @@
         </div>
     </div>
     <div class="obpress-incentives-link-holder">
-        <a href="#">Ver todas</a>
+        <a href="#"><?php _e('See All', 'OBPress_Incentives') ?></a>
     </div>
 </div>
