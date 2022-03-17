@@ -25,7 +25,7 @@ class Incentives extends \Elementor\Widget_Base {
 	}
 
 	public function get_title() {
-		return __( 'Incentives', 'plugin-name' );
+		return __( 'Incentives', 'OBPress_Incentives' );
 	}
 
 	public function get_icon() {
@@ -49,7 +49,7 @@ class Incentives extends \Elementor\Widget_Base {
 		$this->add_control(
 			'incentives_box_padding',
 			[
-				'label' => __( 'Incentives Box Padding', 'OBPress_SearchBarPlugin' ),
+				'label' => __( 'Incentives Box Padding', 'OBPress_Incentives' ),
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
 				'default' => [
 					'top' => '27',
@@ -275,7 +275,7 @@ class Incentives extends \Elementor\Widget_Base {
 		$this->add_control(
 			'incentives_slider_transition',
 			[
-				'label' => __( 'Slider Transition(seconds)', 'OBPress_SearchBarPlugin' ),
+				'label' => __( 'Slider Transition(seconds)', 'OBPress_Incentives' ),
 				'type' => \Elementor\Controls_Manager::SLIDER,
 				'size_units' => [ 's'],
 				'range' => [
@@ -295,13 +295,13 @@ class Incentives extends \Elementor\Widget_Base {
 		$this->add_control(
 			'incentives_slide_pagination',
 			[
-				'label' => __( 'Slider Pagination', 'OBPress_SearchBarPlugin' ),
+				'label' => __( 'Slider Pagination', 'OBPress_Incentives' ),
 				'type' => \Elementor\Controls_Manager::SELECT,
 				'default' => 'lines',
 				'options' => [
-					'lines'  => __( 'Lines', 'plugin-domain' ),
-					'bullets' => __( 'Bullets', 'plugin-domain' ),
-					'disabled' => __( 'Disabled', 'plugin-domain')
+					'lines'  => __( 'Lines', 'OBPress_Incentives' ),
+					'bullets' => __( 'Bullets', 'OBPress_Incentives' ),
+					'disabled' => __( 'Disabled', 'OBPress_Incentives')
 				],
 			]
 		);
@@ -310,14 +310,14 @@ class Incentives extends \Elementor\Widget_Base {
 		$this->add_control(
 			'incentives_number_of_slides',
 			[
-				'label' => __( 'Number of Pagination Bullets', 'OBPress_SearchBarPlugin' ),
+				'label' => __( 'Number of Pagination Bullets', 'OBPress_Incentives' ),
 				'type' => \Elementor\Controls_Manager::SELECT,
 				'default' => '5',
 				'options' => [
-					'2'  => __( '2', 'plugin-domain' ),
-					'3' => __( '3', 'plugin-domain' ),
-					'4' => __( '4', 'plugin-domain'),
-					'5' => __( '5', 'plugin-domain')
+					'2'  => __( '2', 'OBPress_Incentives' ),
+					'3' => __( '3', 'OBPress_Incentives' ),
+					'4' => __( '4', 'OBPress_Incentives'),
+					'5' => __( '5', 'OBPress_Incentives')
 				],
 			]
 		);
@@ -325,7 +325,7 @@ class Incentives extends \Elementor\Widget_Base {
 		$this->add_control(
 			'obpress_incentives_pagination_bullet_color',
 			[
-				'label' => __('Pagination Bullet Color', 'OBPress_SpecialOffers'),
+				'label' => __('Pagination Bullet Color', 'OBPress_Incentives'),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'input_type' => 'color',
 				'default' => '#000',
@@ -338,7 +338,7 @@ class Incentives extends \Elementor\Widget_Base {
 		$this->add_control(
 			'obpress_incentives_pagination_bullet_back_icon',
 			[
-				'label' => __( 'Back Icon', 'text-domain' ),
+				'label' => __( 'Back Icon', 'OBPress_Incentives' ),
 				'type' => \Elementor\Controls_Manager::ICONS,
 			]
 		);
@@ -346,7 +346,7 @@ class Incentives extends \Elementor\Widget_Base {
 		$this->add_control(
 			'obpress_incentives_pagination_bullet_next_icon',
 			[
-				'label' => __( 'Next Icon', 'text-domain' ),
+				'label' => __( 'Next Icon', 'OBPress_Incentives' ),
 				'type' => \Elementor\Controls_Manager::ICONS,
 			]
 		);
