@@ -15,6 +15,11 @@ if(get_option('obpress_api_set') == true){
     require_once('elementor/init.php');
 }
 
+add_action( 'init', 'obpress_incentives_load_textdomain' );
+ 
+function obpress_incentives_load_textdomain() {
+    load_plugin_textdomain( 'OBPress_Incentives', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' ); 
+}
 
 
 // TODO, MAKE GIT BRANCH, CONNECT WITH UPDATE CHECKER
